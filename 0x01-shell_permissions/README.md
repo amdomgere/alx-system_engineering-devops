@@ -1,1 +1,1 @@
-a script that prints the effective username of the current user
+to Create a script that creates a directory called my_dir with permissions 751 in the working directory
