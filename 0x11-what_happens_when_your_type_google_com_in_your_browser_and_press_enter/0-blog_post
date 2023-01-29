@@ -1,0 +1,29 @@
+step 1:
+Check the cache for the domain's IP address, for a sites like google.com it's usualla embedded in most browsers as a trusted site that uses https (this was done after a few man in the middle attacks which would hijack the initial request since the browser uses http (port 80) by default and is re-routed to https:(port 443) )
+it might also check
+
+OS cache
+router cache
+ISP cache
+If the requested URL is not in the cache, the browser checks the DNS registry
+
+step 2:
+The browser initiates a TCP connection with the server.
+Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information. Browsers use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol used for many types of HTTP requests.
+
+To transfer data packets between your computer(client) and the server, it is important to have a TCP/IP connection established. This connection is established using a process called the TCP/IP three-way handshake. This is a three-step process where the client and the server exchange SYN(synchronize) and ACK(acknowledge) messages to establish a connection.
+
+The client machine sends a SYN packet to the server over the internet, asking if it is open for new connections.
+
+If the server has open ports that can accept and initiate new connections, it’ll respond with an ACKnowledgment of the SYN packet using a SYN/ACK packet.
+
+The client will receive the SYN/ACK packet from the server and will acknowledge it by sending an ACK packet.
+
+Then a TCP connection is established for data transmission!
+after that an SSL connection is initialized to supprt communication over the secure https
+
+step 3:
+The browser now sends the request and the server's loadbalancer will then redirect your request to the respective destination and send a response back t the application
+
+step 4:
+The browser then renders the response html and awaits further interactions
